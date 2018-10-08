@@ -1,0 +1,110 @@
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.0.0">
+        <command name="bundledep/list">
+            <action class="org.singam.karaf.bundle.dependency.installer.BundleDependencyList"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="bundledep/install">
+            <action class="org.singam.karaf.bundle.dependency.installer.BundleDependencyInstaller"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="karaffeatures/list">
+            <action class="org.singam.karaf.bundle.dependency.installer.FeaturesList"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="karaffeatures/install">
+            <action class="org.singam.karaf.bundle.dependency.installer.FeaturesInstall"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="karaffeatures/installed">
+            <action class="org.singam.karaf.bundle.dependency.installer.InstalledFeatures"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+         <command name="karaffeatures/addtorepo">
+            <action class="org.singam.karaf.bundle.dependency.installer.FeaturesAddToRepository"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="karaffeatures/listbundles">
+            <action class="org.singam.karaf.bundle.dependency.installer.KarafFeaturesListBundle"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="karaffeatures/installdep">
+            <action class="org.singam.karaf.bundle.dependency.installer.KarafFeaturesInstallDepBundle"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="bundlelist/class">
+            <action class="org.singam.karaf.bundle.dependency.installer.BundleListClass"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="bundleuninstall/id">
+            <action class="org.singam.karaf.bundle.dependency.installer.BundleUninstallById"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="bundleuninstall/class">
+            <action class="org.singam.karaf.bundle.dependency.installer.BundleUninstallByPackage"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="bundles/listall">
+            <action class="org.singam.karaf.bundle.dependency.installer.ListAllBundles"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+		<command name="services/list">
+            <action class="org.singam.karaf.bundle.dependency.installer.ListAllServices"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="sys/reboot">
+            <action class="org.singam.karaf.bundle.dependency.installer.KarafSystemServiceExt"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+        <command name="blueprint/components">
+            <action class="org.singam.karaf.bundle.dependency.installer.GetBlueprintComponents"/>
+            <completers>
+                <ref component-id="bundleDependencyInstallerCompleter"/>
+                <null/>
+            </completers>
+        </command>
+    </command-bundle>
+     <bean id="bundleDependencyInstallerCompleter" class="org.singam.karaf.bundle.dependency.installer.BundleDependencyInstallerCompleter"/>
+</blueprint>
